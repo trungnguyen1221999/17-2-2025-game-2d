@@ -12,16 +12,27 @@ public class Player : MonoBehaviour
     void Start()
     {
         m_anim = GetComponent<Animator>();
-        curAtkRate 
+        curAtkRate = atkRate;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !isAttacked)
         {
            if (m_anim)
             m_anim.SetBool(Const.ATTACK_ANIM, true);
+            isAttacked = true;
+        }
+
+        if (isAttacked)
+        {
+            curAtkRate -= Time.deltaTime;
+            if (curAtkRate < 0)
+            {
+                isAttacked = false;
+                curAtkRate = atkRate;
+            }
         }
     }
 
