@@ -9,11 +9,14 @@ public class Player : MonoBehaviour
     float curAtkRate;
     bool isAttacked;
     bool isDead;
+    Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
         m_anim = GetComponent<Animator>();
         curAtkRate = atkRate;
+        rb = GetComponent<Rigidbody2D>();
+        rb.transform.localScale =new Vector2(-1,1); 
     }
 
     // Update is called once per frame

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8043942747134182739}
   - component: {fileID: 7397978579509341525}
   - component: {fileID: 486654026736698644}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.37939286, y: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 6211326078675895877}
   - component: {fileID: -7165759854920068116}
   - component: {fileID: 7469826957846834871}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hero_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

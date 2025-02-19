@@ -20,15 +20,21 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (m_rb)
-        {
-            m_rb.velocity = new Vector2 (-movingSpeed, m_rb.velocity.y);
-        }
-
-        if (atkDistance >= Vector2.Distance(m_rb.position, m_player.transform.position))
+        float distanceToPlayer = Vector2.Distance(m_rb.position, m_player.transform.position);
+        if (atkDistance >= distanceToPlayer)
         {
             m_anim.SetBool(Const.ATTACK_ANIM, true);
             m_rb.velocity = Vector2.zero;
         }
+        else
+            m_rb.velocity = new Vector2(-movingSpeed, m_rb.velocity.y);
+
+    }
+
+    public void Die()
+    {
+        m_anim.SetTrigger(Const.DEAD_ANIM);
+        m_rb.velocity = Vector2.zero;   
+        gameObject.layer = LayerMask.NameToLayer(Const.DEAD_LAYER);
     }
 }

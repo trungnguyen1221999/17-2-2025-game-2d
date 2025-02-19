@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 1195828042328698089}
   - component: {fileID: 5948704498217775717}
   - component: {fileID: 7581906934743758149}
-  m_Layer: 0
+  - component: {fileID: 3142906960145149608}
+  m_Layer: 6
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,12 +90,24 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.10592198, y: 0}
   serializedVersion: 2
   m_Radius: 0.2112379
+--- !u!114 &3142906960145149608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3798146524879229969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6075dd340541c8f4892fb3da5a61a3b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6345894557194298376
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +122,7 @@ GameObject:
   - component: {fileID: 7391998474935868348}
   - component: {fileID: 2728922765022275631}
   - component: {fileID: 5768397731309558422}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hero_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,4 +302,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f8103275aba5743a115f9643c951a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkRate: 2
+  atkRate: 0.5
