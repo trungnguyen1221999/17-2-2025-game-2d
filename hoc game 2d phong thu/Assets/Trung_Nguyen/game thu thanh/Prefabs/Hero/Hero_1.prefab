@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 5768397731309558422}
   m_Layer: 6
   m_Name: Hero_1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,4 +302,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f8103275aba5743a115f9643c951a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkRate: 0.5
+  atkRate: 1.5
