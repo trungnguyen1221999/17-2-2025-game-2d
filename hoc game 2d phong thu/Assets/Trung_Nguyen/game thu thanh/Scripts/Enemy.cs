@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     Rigidbody2D m_rb;
     Animator m_anim;
     Player m_player;
+    bool isPlayerDead;
 
     void Start ()
     {
@@ -20,6 +21,13 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if (isPlayerDead || m_player.IsDied())
+        {
+            m_rb.velocity = Vector2.zero;
+            m_anim.SetBool(Const.ATTACK_ANIM, false);
+            return;
+        }
+
         float distanceToPlayer = Vector2.Distance(m_rb.position, m_player.transform.position);
         if (atkDistance >= distanceToPlayer)
         {
@@ -36,5 +44,14 @@ public class Enemy : MonoBehaviour
         m_anim.SetTrigger(Const.DEAD_ANIM);
         m_rb.velocity = Vector2.zero;   
         gameObject.layer = LayerMask.NameToLayer(Const.DEAD_LAYER);
+        Destroy(gameObject,1f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag(Const.PLAYER_TAG))
+        {
+            isPlayerDead = true;
+        }
     }
 }

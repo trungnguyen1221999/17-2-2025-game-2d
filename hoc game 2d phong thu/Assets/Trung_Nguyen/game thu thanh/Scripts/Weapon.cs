@@ -11,10 +11,9 @@ public class Weapon : MonoBehaviour
         if (collision.CompareTag(Const.ENEMY_TAG))
         {
             Enemy enemy = collision.GetComponent<Enemy>();
-            if (enemy && !isEnemyDied)
+            if (enemy)
             {
                 enemy.Die();
-                isEnemyDied = true;
             }
         }
     }

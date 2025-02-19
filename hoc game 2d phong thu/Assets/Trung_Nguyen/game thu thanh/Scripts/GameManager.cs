@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         {
             int randomEnemy = Random.Range(0, enemyPrefabs.Length);
             Enemy enemy = enemyPrefabs[randomEnemy];
-            Instantiate(enemy, new Vector2 (8,1), Quaternion.identity);
+            Instantiate(enemy, new Vector2 (8,0.2f), Quaternion.identity);
             yield return new WaitForSeconds(spawnTime);
         }
     }
