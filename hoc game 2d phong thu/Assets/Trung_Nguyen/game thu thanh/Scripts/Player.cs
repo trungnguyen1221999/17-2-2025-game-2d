@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public float atkRate;
     float curAtkRate;
     bool isAttacked;
+    bool isDead;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,5 +41,14 @@ public class Player : MonoBehaviour
     {
         if (m_anim)
             m_anim.SetBool(Const.ATTACK_ANIM, false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag(Const.ENEMY_WEAPON_TAG) && !isDead)
+        {
+            m_anim.SetBool(Const.DEAD_ANIM, true);
+            isDead = true;
+        }
     }
 }
