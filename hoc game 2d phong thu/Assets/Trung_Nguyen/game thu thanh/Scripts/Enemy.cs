@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public float movingSpeed;
     public float atkDistance;
+    public int score;
     Rigidbody2D m_rb;
     Animator m_anim;
     Player m_player;
@@ -45,6 +46,7 @@ public class Enemy : MonoBehaviour
         m_rb.velocity = Vector2.zero;   
         gameObject.layer = LayerMask.NameToLayer(Const.DEAD_LAYER);
         Destroy(gameObject,1f);
+        m_player.AddScore(score);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

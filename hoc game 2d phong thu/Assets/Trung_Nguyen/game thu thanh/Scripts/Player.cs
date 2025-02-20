@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     bool isAttacked;
     bool isDead;
     Rigidbody2D rb;
+    int score;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
         curAtkRate = atkRate;
         rb = GetComponent<Rigidbody2D>();
         rb.transform.localScale =new Vector2(-1,1); 
+        score = 0;
     }
 
     // Update is called once per frame
@@ -58,5 +60,11 @@ public class Player : MonoBehaviour
     public bool IsDied()
     {
         return isDead;
+    }
+
+    public void AddScore (int score)
+    {
+        this.score += score;
+        Debug.Log ("score: " + this.score);
     }
 }

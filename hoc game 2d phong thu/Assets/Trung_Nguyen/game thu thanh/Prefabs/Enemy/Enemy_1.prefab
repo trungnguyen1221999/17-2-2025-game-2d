@@ -196,6 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingSpeed: 1.5
   atkDistance: 1
+  score: 1
 --- !u!1 &3232008584300680570
 GameObject:
   m_ObjectHideFlags: 0
